@@ -1,1 +1,1290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Akshardham Associates — Investor Universe | Rajasthan Real Estate</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --navy:      #0E2744;
+      --navy-mid:  #1B3A5C;
+      --navy-lt:   #264F7A;
+      --gold:      #C4923A;
+      --gold-lt:   #E8BE78;
+      --gold-pale: #FDF3E3;
+      --emerald:   #0B6E4F;
+      --emerald-lt:#13A075;
+      --teal:      #0A7E8C;
+      --coral:     #C2523A;
+      --cream:     #FAF7F2;
+      --white:     #FFFFFF;
+      --text:      #1A1A2E;
+      --text-mid:  #4A5568;
+      --text-muted:#7B8794;
+      --border:    #E8E0D4;
+      --sh:        0 4px 24px rgba(14,39,68,.09);
+      --sh-lg:     0 16px 56px rgba(14,39,68,.14);
+      --sh-xl:     0 24px 80px rgba(14,39,68,.18);
+    }
+    *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+    html { scroll-behavior:smooth; font-size:16px; }
+    body { font-family:'Inter',sans-serif; background:var(--cream); color:var(--text); line-height:1.7; overflow-x:hidden; }
+    img { max-width:100%; display:block; }
+
+    /* ──────── NAV ──────── */
+    nav {
+      position:fixed; top:0; left:0; right:0; z-index:200;
+      background:rgba(10,20,40,.88); backdrop-filter:blur(16px);
+      border-bottom:1px solid rgba(196,146,58,.25);
+      padding:0 48px; height:72px;
+      display:flex; align-items:center; justify-content:space-between;
+    }
+    .nav-brand { display:flex; align-items:center; gap:14px; text-decoration:none; }
+    .nav-logo-svg {
+      width:52px; height:52px; flex-shrink:0;
+      filter:drop-shadow(0 2px 8px rgba(196,146,58,.45));
+    }
+    .nav-brand-text { display:flex; flex-direction:column; align-items:flex-start; justify-content:center; }
+    .nav-brand-name { font-family:'Playfair Display',serif; font-size:18px; color:#ffffff; font-weight:700; line-height:1.15; letter-spacing:.4px; text-shadow:0 1px 10px rgba(0,0,0,.5); }
+    .nav-brand-sub  { font-size:10.5px; color:rgba(255,255,255,.5); letter-spacing:.8px; text-transform:uppercase; margin-top:2px; }
+    .nav-links { display:flex; align-items:center; gap:32px; list-style:none; }
+    .nav-links a { text-decoration:none; font-size:13.5px; font-weight:500; color:rgba(255,255,255,.65); transition:color .2s; }
+    .nav-links a:hover { color:var(--gold-lt); }
+    .nav-cta {
+      background:linear-gradient(135deg,var(--gold) 0%,#A0721E 100%) !important;
+      color:#fff !important; padding:10px 26px; border-radius:8px;
+      font-weight:600 !important; font-size:13px !important; letter-spacing:.3px;
+      box-shadow:0 4px 16px rgba(196,146,58,.35); transition:transform .2s, box-shadow .2s !important;
+    }
+    .nav-cta:hover { transform:translateY(-1px); box-shadow:0 6px 22px rgba(196,146,58,.45) !important; }
+
+    /* ──────── HERO ──────── */
+    .hero {
+      position:relative; min-height:100vh;
+      display:flex; flex-direction:column; justify-content:center;
+      padding:140px 60px 100px;
+      overflow:hidden;
+    }
+    .hero-bg {
+      position:absolute; inset:0; z-index:0;
+      background:url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1800&q=80') center/cover no-repeat;
+    }
+    .hero-overlay {
+      position:absolute; inset:0; z-index:1;
+      background:linear-gradient(120deg, rgba(10,20,40,.92) 0%, rgba(14,39,68,.80) 55%, rgba(10,110,79,.45) 100%);
+    }
+    .hero-content { position:relative; z-index:2; max-width:760px; }
+    .hero-eyebrow {
+      display:inline-flex; align-items:center; gap:10px;
+      background:rgba(196,146,58,.18); border:1px solid rgba(196,146,58,.45);
+      color:var(--gold-lt); padding:8px 20px; border-radius:50px;
+      font-size:12px; font-weight:600; letter-spacing:1.2px; text-transform:uppercase;
+      margin-bottom:28px; backdrop-filter:blur(4px);
+    }
+    .hero h1 {
+      font-family:'Playfair Display',serif;
+      font-size:clamp(40px,5.5vw,72px); line-height:1.1;
+      color:#fff; margin-bottom:16px;
+    }
+    .hero h1 .gold { color:var(--gold-lt); }
+    .hero-tagline {
+      font-size:17px; color:rgba(255,255,255,.7);
+      margin-bottom:12px; font-style:italic;
+    }
+    .hero-sub {
+      font-size:16px; color:rgba(255,255,255,.62);
+      max-width:580px; margin-bottom:44px; line-height:1.8;
+    }
+    .hero-btns { display:flex; gap:16px; flex-wrap:wrap; }
+    .btn-gold {
+      background:linear-gradient(135deg,var(--gold) 0%,#A0721E 100%);
+      color:#fff; padding:16px 38px; border-radius:10px;
+      font-size:15px; font-weight:700; text-decoration:none;
+      box-shadow:0 6px 24px rgba(196,146,58,.4); transition:transform .2s, box-shadow .2s;
+      letter-spacing:.3px;
+    }
+    .btn-gold:hover { transform:translateY(-2px); box-shadow:0 10px 32px rgba(196,146,58,.5); }
+    .btn-ghost {
+      background:rgba(255,255,255,.1); border:1.5px solid rgba(255,255,255,.35);
+      color:#fff; padding:15px 34px; border-radius:10px;
+      font-size:15px; font-weight:600; text-decoration:none;
+      backdrop-filter:blur(4px); transition:background .2s;
+    }
+    .btn-ghost:hover { background:rgba(255,255,255,.18); }
+    .hero-scroll {
+      position:absolute; bottom:36px; left:50%; transform:translateX(-50%);
+      z-index:2; display:flex; flex-direction:column; align-items:center; gap:8px;
+      color:rgba(255,255,255,.45); font-size:11px; letter-spacing:1px; text-transform:uppercase;
+    }
+    .scroll-dot { width:6px; height:6px; background:var(--gold); border-radius:50%; animation:bob 2s ease-in-out infinite; }
+    @keyframes bob { 0%,100%{transform:translateY(0)} 50%{transform:translateY(6px)} }
+
+    /* ──────── STATS RIBBON ──────── */
+    .stats-ribbon {
+      background:linear-gradient(90deg,#0E2744 0%,#1B3A5C 50%,#0B6E4F 100%);
+      padding:0; overflow:hidden;
+    }
+    .stats-inner {
+      max-width:1200px; margin:0 auto; padding:40px 60px;
+      display:grid; grid-template-columns:repeat(4,1fr); gap:0;
+    }
+    .stat-item {
+      text-align:center; padding:0 20px;
+      border-right:1px solid rgba(255,255,255,.12);
+    }
+    .stat-item:last-child { border-right:none; }
+    .stat-icon { font-size:26px; margin-bottom:8px; }
+    .stat-num {
+      font-family:'Playfair Display',serif; font-size:38px;
+      color:var(--gold-lt); font-weight:700; line-height:1;
+    }
+    .stat-label { font-size:12px; color:rgba(255,255,255,.55); margin-top:6px; letter-spacing:.4px; }
+
+    /* ──────── SECTION SHELL ──────── */
+    .section { padding:96px 60px; max-width:1200px; margin:0 auto; }
+    .section-full { padding:96px 0; }
+    .section-full .section-inner { max-width:1200px; margin:0 auto; padding:0 60px; }
+
+    .pill {
+      display:inline-block; background:var(--gold-pale); color:#8A5E1A;
+      padding:5px 16px; border-radius:50px; font-size:11.5px;
+      font-weight:700; letter-spacing:1.2px; text-transform:uppercase; margin-bottom:14px;
+    }
+    .pill-emerald { background:#E6F5F0; color:#0B5A3E; }
+    .pill-teal    { background:#E6F5F6; color:#0A6272; }
+    .pill-navy    { background:#E6EDF5; color:#0E2744; }
+
+    h2.section-title {
+      font-family:'Playfair Display',serif;
+      font-size:clamp(30px,3.5vw,46px); color:var(--navy);
+      line-height:1.2; margin-bottom:14px;
+    }
+    .section-desc { font-size:16.5px; color:var(--text-mid); max-width:600px; line-height:1.8; }
+    .divider { width:56px; height:3px; background:var(--gold); border-radius:2px; margin:18px 0 36px; }
+    .divider-center { margin-left:auto; margin-right:auto; }
+
+    /* ──────── ABOUT SPLIT ──────── */
+    .about-split {
+      display:grid; grid-template-columns:1fr 1fr; gap:72px; align-items:center;
+    }
+    .about-img-wrap {
+      position:relative; border-radius:24px; overflow:hidden;
+      box-shadow:var(--sh-xl);
+    }
+    .about-img-wrap img { width:100%; height:480px; object-fit:cover; }
+    .about-badge {
+      position:absolute; bottom:28px; left:28px;
+      background:rgba(10,20,40,.85); backdrop-filter:blur(12px);
+      border:1px solid rgba(196,146,58,.4); border-radius:14px;
+      padding:16px 22px; color:#fff;
+    }
+    .about-badge-num { font-family:'Playfair Display',serif; font-size:30px; color:var(--gold-lt); font-weight:700; }
+    .about-badge-label { font-size:11.5px; color:rgba(255,255,255,.6); margin-top:2px; }
+    .about-steps { display:flex; flex-direction:column; gap:28px; margin-top:40px; }
+    .about-step {
+      display:flex; gap:20px; align-items:flex-start;
+      background:var(--white); border-radius:16px; padding:22px 24px;
+      box-shadow:var(--sh); border-left:4px solid var(--gold);
+      transition:transform .2s, box-shadow .2s;
+    }
+    .about-step:hover { transform:translateX(4px); box-shadow:var(--sh-lg); }
+    .about-step:nth-child(2) { border-left-color:var(--emerald); }
+    .about-step:nth-child(3) { border-left-color:var(--teal); }
+    .step-num-box {
+      width:46px; height:46px; border-radius:12px; flex-shrink:0;
+      background:linear-gradient(135deg,var(--gold) 0%,#A0721E 100%);
+      display:flex; align-items:center; justify-content:center;
+      font-weight:800; color:#fff; font-size:17px;
+    }
+    .about-step:nth-child(2) .step-num-box { background:linear-gradient(135deg,var(--emerald) 0%,#075A3E 100%); }
+    .about-step:nth-child(3) .step-num-box { background:linear-gradient(135deg,var(--teal) 0%,#085F6A 100%); }
+    .step-body h4 { font-weight:700; font-size:15.5px; color:var(--navy); margin-bottom:4px; }
+    .step-body p  { font-size:13.5px; color:var(--text-mid); line-height:1.6; }
+    .step-akd-tag { margin-top:6px; font-size:12px; color:var(--gold); font-weight:600; }
+    .about-step:nth-child(2) .step-akd-tag { color:var(--emerald); }
+    .about-step:nth-child(3) .step-akd-tag { color:var(--teal); }
+
+    /* ──────── VIDEO ──────── */
+    .video-section { background:linear-gradient(160deg,#0E2744 0%,#1B3A5C 60%,#0B3D35 100%); padding:100px 0; }
+    .video-inner { max-width:1200px; margin:0 auto; padding:0 60px; }
+    .video-inner .pill { background:rgba(196,146,58,.2); color:var(--gold-lt); }
+    .video-inner h2.section-title { color:#fff; }
+    .video-inner .section-desc { color:rgba(255,255,255,.6); }
+    .video-layout { display:grid; grid-template-columns:1.1fr 0.9fr; gap:56px; align-items:center; margin-top:52px; }
+    .main-video-frame {
+      border-radius:20px; overflow:hidden;
+      box-shadow:0 24px 72px rgba(0,0,0,.5);
+      aspect-ratio:16/9; position:relative;
+      background:#050F1C;
+    }
+    .video-overlay {
+      position:absolute; inset:0;
+      background:url('https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=900&q=70') center/cover no-repeat;
+      opacity:.35;
+    }
+    .video-center {
+      position:absolute; inset:0;
+      display:flex; flex-direction:column;
+      align-items:center; justify-content:center;
+      cursor:pointer; z-index:2;
+    }
+    .play-ring {
+      width:88px; height:88px; border-radius:50%;
+      background:linear-gradient(135deg,var(--gold) 0%,#A0721E 100%);
+      display:flex; align-items:center; justify-content:center;
+      box-shadow:0 0 0 20px rgba(196,146,58,.15), 0 0 0 40px rgba(196,146,58,.07);
+      margin-bottom:20px; transition:transform .25s;
+    }
+    .play-ring:hover { transform:scale(1.1); }
+    .play-ring svg { width:32px; height:32px; fill:#fff; margin-left:6px; }
+    .video-title { font-family:'Playfair Display',serif; font-size:20px; color:#fff; text-align:center; }
+    .video-sub   { font-size:13px; color:rgba(255,255,255,.5); margin-top:6px; text-align:center; }
+    .video-meta { display:flex; flex-direction:column; gap:24px; }
+    .video-meta-card {
+      background:rgba(255,255,255,.07); border:1px solid rgba(255,255,255,.12);
+      border-radius:16px; padding:24px 22px;
+      transition:background .2s;
+    }
+    .video-meta-card:hover { background:rgba(255,255,255,.1); }
+    .vmc-icon { font-size:26px; margin-bottom:10px; }
+    .vmc-title { font-weight:600; font-size:15px; color:#fff; margin-bottom:4px; }
+    .vmc-desc  { font-size:13px; color:rgba(255,255,255,.55); line-height:1.55; }
+
+    /* ──────── SHORTS ──────── */
+    .shorts-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:28px; }
+    .short-card {
+      border-radius:20px; overflow:hidden; background:var(--white);
+      box-shadow:var(--sh); transition:transform .25s, box-shadow .25s;
+    }
+    .short-card:hover { transform:translateY(-6px); box-shadow:var(--sh-xl); }
+    .short-thumb {
+      position:relative; aspect-ratio:4/3; overflow:hidden; cursor:pointer;
+    }
+    .short-thumb img { width:100%; height:100%; object-fit:cover; transition:transform .4s; }
+    .short-card:hover .short-thumb img { transform:scale(1.06); }
+    .short-thumb-overlay {
+      position:absolute; inset:0;
+      background:linear-gradient(180deg,rgba(10,20,40,.15) 0%,rgba(10,20,40,.7) 100%);
+    }
+    .short-badge {
+      position:absolute; top:14px; left:14px;
+      background:var(--gold); color:#fff; font-size:10px; font-weight:700;
+      padding:4px 12px; border-radius:50px; letter-spacing:1px; text-transform:uppercase;
+    }
+    .short-play-btn {
+      position:absolute; top:50%; left:50%; transform:translate(-50%,-50%);
+      width:54px; height:54px; border-radius:50%;
+      background:rgba(255,255,255,.92); display:flex; align-items:center; justify-content:center;
+      transition:transform .2s;
+    }
+    .short-play-btn svg { width:20px; height:20px; fill:var(--navy); margin-left:4px; }
+    .short-card:hover .short-play-btn { transform:translate(-50%,-50%) scale(1.12); }
+    .short-body { padding:22px 22px 24px; }
+    .short-tag  { font-size:11px; color:var(--gold); font-weight:700; letter-spacing:.8px; text-transform:uppercase; margin-bottom:6px; }
+    .short-title { font-weight:700; font-size:16px; color:var(--navy); margin-bottom:8px; line-height:1.35; }
+    .short-desc  { font-size:13.5px; color:var(--text-mid); line-height:1.6; }
+
+    /* ──────── PLANS ──────── */
+    .plans-bg { background:linear-gradient(180deg,var(--cream) 0%,#EFF4FA 100%); padding:100px 0; }
+    .plans-inner { max-width:1200px; margin:0 auto; padding:0 60px; }
+    .plans-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:22px; }
+    .plan-card {
+      border-radius:22px; padding:32px 24px; border:1.5px solid var(--border);
+      background:var(--white); position:relative; overflow:hidden;
+      transition:transform .25s, box-shadow .25s;
+    }
+    .plan-card::before {
+      content:''; position:absolute; top:0; left:0; right:0; height:4px;
+      background:linear-gradient(90deg,var(--gold) 0%,var(--gold-lt) 100%);
+    }
+    .plan-card.p2::before { background:linear-gradient(90deg,var(--emerald) 0%,var(--emerald-lt) 100%); }
+    .plan-card.p3::before { background:linear-gradient(90deg,var(--teal) 0%,#18B5C4 100%); }
+    .plan-card.p4::before { background:linear-gradient(90deg,var(--navy) 0%,var(--navy-lt) 100%); }
+    .plan-card.featured {
+      background:linear-gradient(160deg,var(--navy) 0%,#1E4A74 100%);
+      border-color:transparent; box-shadow:var(--sh-xl);
+    }
+    .plan-card:not(.featured):hover { transform:translateY(-6px); box-shadow:var(--sh-lg); }
+    .plan-card.featured:hover { transform:translateY(-6px); box-shadow:0 24px 72px rgba(14,39,68,.4); }
+    .plan-hot {
+      position:absolute; top:20px; right:20px;
+      background:var(--gold); color:#fff; font-size:10px; font-weight:700;
+      padding:4px 12px; border-radius:50px; letter-spacing:.8px;
+    }
+    .plan-invite {
+      position:absolute; top:20px; right:20px;
+      background:rgba(255,255,255,.15); color:rgba(255,255,255,.8); font-size:10px; font-weight:700;
+      padding:4px 12px; border-radius:50px; letter-spacing:.8px; border:1px solid rgba(255,255,255,.25);
+    }
+    .plan-layer { font-size:11px; font-weight:700; letter-spacing:1.5px; text-transform:uppercase; color:var(--gold); margin-bottom:8px; }
+    .plan-card.p2 .plan-layer { color:var(--emerald-lt); }
+    .plan-card.p3 .plan-layer { color:#2EC0CF; }
+    .plan-card.featured .plan-layer { color:rgba(196,146,58,.8); }
+    .plan-name { font-family:'Playfair Display',serif; font-size:20px; color:var(--navy); margin-bottom:20px; line-height:1.25; }
+    .plan-card.featured .plan-name { color:#fff; }
+    .plan-return-box {
+      background:var(--cream); border-radius:12px; padding:16px 18px; margin-bottom:22px;
+    }
+    .plan-card.featured .plan-return-box { background:rgba(255,255,255,.1); }
+    .plan-inv  { font-size:12.5px; color:var(--text-muted); margin-bottom:4px; }
+    .plan-card.featured .plan-inv { color:rgba(255,255,255,.5); }
+    .plan-ret  { font-size:28px; font-weight:800; color:var(--emerald); line-height:1; }
+    .plan-card.p3 .plan-ret { color:#2EC0CF; }
+    .plan-card.p4 .plan-ret { color:var(--gold-lt); }
+    .plan-card.featured .plan-ret { color:#5EDDA6; }
+    .plan-dur  { font-size:12px; color:var(--text-muted); margin-top:4px; }
+    .plan-card.featured .plan-dur { color:rgba(255,255,255,.45); }
+    .plan-feat { list-style:none; display:flex; flex-direction:column; gap:10px; }
+    .plan-feat li { display:flex; gap:10px; font-size:13px; color:var(--text); align-items:flex-start; }
+    .plan-card.featured .plan-feat li { color:rgba(255,255,255,.78); }
+    .plan-feat li .ck { flex-shrink:0; width:18px; height:18px; border-radius:50%; background:#E6F5F0; display:flex; align-items:center; justify-content:center; font-size:10px; color:var(--emerald); margin-top:1px; }
+    .plan-card.p3 .plan-feat li .ck { background:rgba(46,192,207,.15); color:#2EC0CF; }
+    .plan-card.p4 .plan-feat li .ck { background:rgba(196,146,58,.15); color:var(--gold); }
+    .plan-card.featured .plan-feat li .ck { background:rgba(94,221,166,.15); color:#5EDDA6; }
+
+    /* ──────── IMAGE FEATURE ROW ──────── */
+    .feature-img-row {
+      display:grid; grid-template-columns:1fr 1fr; gap:0; min-height:500px;
+    }
+    .fir-img { position:relative; overflow:hidden; }
+    .fir-img img { width:100%; height:100%; object-fit:cover; }
+    .fir-img-overlay { position:absolute; inset:0; background:linear-gradient(90deg,rgba(14,39,68,.7) 0%,rgba(14,39,68,.2) 100%); }
+    .fir-content { background:linear-gradient(135deg,var(--navy) 0%,#0B3D35 100%); padding:72px 60px; display:flex; flex-direction:column; justify-content:center; }
+    .fir-content .pill { background:rgba(196,146,58,.2); color:var(--gold-lt); }
+    .fir-content h2 { font-family:'Playfair Display',serif; font-size:36px; color:#fff; margin-bottom:12px; line-height:1.2; }
+    .fir-content .divider { background:var(--gold-lt); }
+    .fir-content p { font-size:15.5px; color:rgba(255,255,255,.65); line-height:1.8; margin-bottom:32px; }
+    .benefits-list { display:flex; flex-direction:column; gap:16px; }
+    .benefit-row { display:flex; align-items:flex-start; gap:16px; }
+    .ben-icon { width:46px; height:46px; border-radius:12px; flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:22px; }
+    .ben-icon.gold-bg    { background:rgba(196,146,58,.2); }
+    .ben-icon.emerald-bg { background:rgba(11,110,79,.25); }
+    .ben-icon.teal-bg    { background:rgba(10,126,140,.25); }
+    .ben-icon.coral-bg   { background:rgba(194,82,58,.2); }
+    .ben-icon.navy-bg    { background:rgba(255,255,255,.1); }
+    .ben-icon.purple-bg  { background:rgba(107,70,193,.25); }
+    .ben-title { font-weight:700; font-size:15px; color:#fff; margin-bottom:3px; }
+    .ben-desc  { font-size:13px; color:rgba(255,255,255,.55); line-height:1.55; }
+
+    /* ──────── PROCESS ──────── */
+    .process-row {
+      display:flex; justify-content:center; align-items:flex-start;
+      gap:0; position:relative; margin-top:52px;
+    }
+    .process-row::before {
+      content:''; position:absolute;
+      top:30px; left:calc(12.5% + 24px); right:calc(12.5% + 24px);
+      height:2px;
+      background:repeating-linear-gradient(90deg,var(--gold) 0,var(--gold) 12px,transparent 12px,transparent 24px);
+      z-index:0;
+    }
+    .proc-step { flex:1; text-align:center; position:relative; z-index:1; padding:0 12px; }
+    .proc-bubble {
+      width:60px; height:60px; border-radius:50%; margin:0 auto 18px;
+      display:flex; align-items:center; justify-content:center;
+      background:var(--white); border:2.5px solid var(--gold);
+      font-family:'Playfair Display',serif; font-size:22px; font-weight:700;
+      color:var(--navy); box-shadow:0 0 0 8px var(--cream), var(--sh);
+      position:relative;
+    }
+    .proc-bubble.done { background:var(--gold); color:#fff; border-color:var(--gold); }
+    .proc-label { font-weight:700; font-size:14px; color:var(--navy); margin-bottom:5px; }
+    .proc-label-hi { font-size:12px; color:var(--gold); font-weight:600; margin-bottom:6px; font-style:italic; }
+    .proc-sub   { font-size:12.5px; color:var(--text-muted); line-height:1.5; }
+
+    /* ──────── TESTIMONIALS ──────── */
+    .testi-section { background:linear-gradient(150deg,var(--navy) 0%,#0F3060 55%,#0B4A38 100%); padding:100px 0; }
+    .testi-inner { max-width:1200px; margin:0 auto; padding:0 60px; }
+    .testi-inner .pill { background:rgba(196,146,58,.2); color:var(--gold-lt); }
+    .testi-inner h2 { color:#fff; }
+    .testi-inner .divider { background:var(--gold-lt); }
+    .testi-inner .section-desc { color:rgba(255,255,255,.6); }
+    .testi-grid { display:grid; grid-template-columns:1fr 1fr; gap:28px; margin-top:52px; }
+    .testi-card {
+      background:rgba(255,255,255,.07); border:1px solid rgba(255,255,255,.12);
+      border-radius:22px; padding:36px 32px;
+      transition:background .25s, transform .25s;
+    }
+    .testi-card:hover { background:rgba(255,255,255,.10); transform:translateY(-3px); }
+    .testi-stars { display:flex; gap:3px; margin-bottom:18px; }
+    .star { width:18px; height:18px; background:var(--gold); border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:9px; color:#fff; }
+    .testi-quote { font-size:44px; line-height:.8; color:var(--gold); font-family:'Playfair Display',serif; margin-bottom:10px; }
+    .testi-text { font-size:16px; color:rgba(255,255,255,.82); line-height:1.8; font-style:italic; margin-bottom:26px; }
+    .testi-author { display:flex; align-items:center; gap:16px; }
+    .testi-avatar {
+      width:54px; height:54px; border-radius:50%; overflow:hidden;
+      border:2px solid var(--gold); flex-shrink:0;
+      background:linear-gradient(135deg,var(--gold) 0%,#A0721E 100%);
+      display:flex; align-items:center; justify-content:center;
+      font-weight:800; font-size:20px; color:#fff;
+    }
+    .testi-name { font-weight:700; font-size:15px; color:#fff; }
+    .testi-role { font-size:12.5px; color:rgba(255,255,255,.5); margin-top:2px; }
+    .testi-placeholder {
+      display:flex; flex-direction:column; align-items:center;
+      justify-content:center; text-align:center;
+      background:rgba(255,255,255,.04); border:1.5px dashed rgba(255,255,255,.2);
+      border-radius:22px; padding:48px 32px;
+    }
+    .testi-placeholder .placeholder-icon { font-size:40px; margin-bottom:14px; }
+    .testi-placeholder p { color:rgba(255,255,255,.6); font-size:15px; margin-bottom:6px; }
+    .testi-placeholder small { color:rgba(255,255,255,.35); font-size:12.5px; }
+
+    /* ──────── FEEDBACK FORM ──────── */
+    .feedback-section { padding:100px 0; background:var(--cream); }
+    .feedback-inner { max-width:780px; margin:0 auto; padding:0 60px; }
+    .feedback-card {
+      background:var(--white); border-radius:28px;
+      padding:60px 56px; box-shadow:var(--sh-xl);
+      border:1px solid rgba(14,39,68,.07);
+    }
+    .feedback-card .pill { margin:0 auto 12px; display:block; text-align:center; width:fit-content; }
+    .feedback-card h2 { text-align:center; }
+    .feedback-card .divider { margin:18px auto 10px; }
+    .feedback-card .section-desc { text-align:center; margin:0 auto 40px; }
+    .form-row { display:grid; grid-template-columns:1fr 1fr; gap:18px; }
+    .form-group { margin-bottom:20px; }
+    label { display:block; font-size:13px; font-weight:600; color:var(--text); margin-bottom:8px; letter-spacing:.2px; }
+    input, select, textarea {
+      width:100%; padding:14px 18px; border:1.5px solid #E2D9CF;
+      border-radius:12px; font-size:14.5px; color:var(--text);
+      background:#FDFAF7; outline:none; font-family:'Inter',sans-serif;
+      transition:border-color .2s, box-shadow .2s, background .2s;
+    }
+    input:focus, select:focus, textarea:focus {
+      border-color:var(--navy); background:var(--white);
+      box-shadow:0 0 0 4px rgba(14,39,68,.08);
+    }
+    textarea { resize:vertical; min-height:130px; }
+    .form-submit {
+      width:100%; padding:18px; border:none; cursor:pointer;
+      background:linear-gradient(135deg,var(--navy) 0%,var(--navy-lt) 100%);
+      color:#fff; font-size:16px; font-weight:700;
+      border-radius:14px; font-family:'Inter',sans-serif;
+      letter-spacing:.3px; transition:transform .2s, box-shadow .2s;
+      box-shadow:0 6px 24px rgba(14,39,68,.25);
+    }
+    .form-submit:hover { transform:translateY(-2px); box-shadow:0 10px 32px rgba(14,39,68,.3); }
+    .form-privacy { text-align:center; font-size:12px; color:var(--text-muted); margin-top:14px; }
+    #formSuccess { display:none; text-align:center; padding:32px 0; }
+    .success-check {
+      width:80px; height:80px; border-radius:50%;
+      background:linear-gradient(135deg,var(--emerald) 0%,var(--emerald-lt) 100%);
+      display:flex; align-items:center; justify-content:center;
+      margin:0 auto 22px; font-size:36px;
+      box-shadow:0 8px 32px rgba(11,110,79,.3);
+    }
+    .success-title { font-family:'Playfair Display',serif; font-size:26px; color:var(--navy); margin-bottom:10px; }
+    .success-desc  { font-size:15px; color:var(--text-mid); line-height:1.7; }
+
+    /* ──────── PROJECT SPOTLIGHT ──────── */
+    .project-card {
+      border-radius:24px; overflow:hidden;
+      box-shadow:var(--sh-xl); position:relative;
+    }
+    .project-img { height:420px; object-fit:cover; width:100%; }
+    .project-overlay {
+      position:absolute; inset:0;
+      background:linear-gradient(180deg,rgba(10,20,40,.05) 0%,rgba(10,20,40,.85) 100%);
+    }
+    .project-content {
+      position:absolute; bottom:0; left:0; right:0;
+      padding:40px 40px; display:grid; grid-template-columns:1fr auto; align-items:flex-end; gap:32px;
+    }
+    .project-badge-row { display:flex; gap:10px; flex-wrap:wrap; margin-bottom:12px; }
+    .project-badge {
+      background:var(--gold); color:#fff; font-size:11px; font-weight:700;
+      padding:5px 14px; border-radius:50px; letter-spacing:.8px;
+    }
+    .project-badge.green { background:var(--emerald); }
+    .project-name { font-family:'Playfair Display',serif; font-size:30px; color:#fff; margin-bottom:6px; }
+    .project-loc  { font-size:14px; color:rgba(255,255,255,.65); }
+    .project-stats { display:flex; gap:20px; }
+    .ps-item { text-align:right; }
+    .ps-num   { font-family:'Playfair Display',serif; font-size:24px; color:var(--gold-lt); font-weight:700; }
+    .ps-label { font-size:11px; color:rgba(255,255,255,.5); }
+
+    /* ──────── FOOTER ──────── */
+    footer { background:#070F1C; padding:72px 0 0; }
+    .foot-inner { max-width:1200px; margin:0 auto; padding:0 60px; }
+    .foot-top {
+      display:grid; grid-template-columns:1.8fr 1fr 1fr 1.2fr; gap:48px;
+      padding-bottom:56px; border-bottom:1px solid rgba(255,255,255,.08);
+      margin-bottom:32px;
+    }
+    .foot-logo { font-family:'Playfair Display',serif; font-size:24px; color:#fff; margin-bottom:12px; }
+    .foot-tagline { font-size:13.5px; color:rgba(255,255,255,.45); line-height:1.7; max-width:280px; margin-bottom:24px; }
+    .foot-socials { display:flex; gap:10px; }
+    .foot-social {
+      width:36px; height:36px; border-radius:9px; background:rgba(255,255,255,.08);
+      display:flex; align-items:center; justify-content:center; font-size:15px;
+      text-decoration:none; transition:background .2s;
+    }
+    .foot-social:hover { background:rgba(196,146,58,.3); }
+    .foot-heading { font-size:12px; font-weight:700; letter-spacing:1.3px; text-transform:uppercase; color:var(--gold); margin-bottom:20px; }
+    .foot-links { list-style:none; display:flex; flex-direction:column; gap:11px; }
+    .foot-links a { text-decoration:none; font-size:13.5px; color:rgba(255,255,255,.55); transition:color .2s; }
+    .foot-links a:hover { color:rgba(255,255,255,.9); }
+    .foot-contact-item { display:flex; gap:12px; font-size:13.5px; color:rgba(255,255,255,.55); margin-bottom:12px; align-items:flex-start; }
+    .fc-icon { font-size:16px; flex-shrink:0; margin-top:1px; }
+    .foot-phones { display:flex; flex-direction:column; gap:6px; }
+    .foot-phone { font-size:17px; font-weight:700; color:var(--gold-lt); letter-spacing:.5px; }
+    .foot-phone-label { font-size:11px; color:rgba(255,255,255,.4); }
+    .foot-bottom { display:flex; align-items:center; justify-content:space-between; padding-bottom:32px; }
+    .foot-copy { font-size:12.5px; color:rgba(255,255,255,.3); }
+    .foot-conf { background:rgba(255,255,255,.06); color:rgba(255,255,255,.3); font-size:11.5px; padding:6px 16px; border-radius:50px; letter-spacing:.5px; }
+
+    /* ──────── ALERT STRIP ──────── */
+    .alert-strip { background:linear-gradient(90deg,var(--gold) 0%,#B07820 100%); padding:14px 60px; }
+    .alert-inner { max-width:1200px; margin:0 auto; display:flex; align-items:center; gap:14px; }
+    .alert-inner span { font-size:14px; font-weight:600; color:#fff; }
+    .alert-inner small { font-size:13px; color:rgba(255,255,255,.75); }
+
+    /* ──────── MISC ──────── */
+    .text-center { text-align:center; }
+    .mt-16 { margin-top:16px; }
+    .mt-32 { margin-top:32px; }
+    .mt-52 { margin-top:52px; }
+    .guarantee-banner {
+      background:linear-gradient(135deg,var(--emerald) 0%,#0B5A3E 100%);
+      border-radius:18px; padding:28px 36px; display:flex; align-items:center; gap:24px;
+      margin-top:32px; box-shadow:var(--sh-lg);
+    }
+    .guarantee-icon { font-size:40px; flex-shrink:0; }
+    .guarantee-text h4 { font-weight:700; font-size:16px; color:#fff; margin-bottom:4px; }
+    .guarantee-text p  { font-size:13.5px; color:rgba(255,255,255,.65); line-height:1.55; }
+
+    /* ──────── RESPONSIVE ──────── */
+    @media(max-width:1024px){
+      nav { padding:0 28px; }
+      .nav-links { display:none; }
+      .section,.section-inner,.plans-inner,.video-inner,.testi-inner,.feedback-inner,.foot-inner,.alert-strip { padding-left:28px; padding-right:28px; }
+      .hero { padding:120px 28px 80px; }
+      .plans-grid,.shorts-grid { grid-template-columns:repeat(2,1fr); }
+      .about-split,.video-layout,.testi-grid,.feature-img-row { grid-template-columns:1fr; }
+      .foot-top { grid-template-columns:1fr 1fr; gap:36px; }
+      .project-content { grid-template-columns:1fr; }
+      .project-stats { justify-content:flex-start; }
+      .form-row { grid-template-columns:1fr; }
+      .feedback-card { padding:40px 28px; }
+    }
+    @media(max-width:600px){
+      .plans-grid,.shorts-grid { grid-template-columns:1fr; }
+      .stats-inner { grid-template-columns:repeat(2,1fr); }
+      .stat-item { border-right:none; border-bottom:1px solid rgba(255,255,255,.1); padding:16px 0; }
+      .process-row { flex-direction:column; gap:32px; align-items:center; }
+      .process-row::before { display:none; }
+      .foot-top { grid-template-columns:1fr; }
+      .hero h1 { font-size:36px; }
+    }
+
+    /* ──────── FADE-IN ──────── */
+    .fade-up { opacity:0; transform:translateY(28px); transition:opacity .6s ease, transform .6s ease; }
+    .fade-up.visible { opacity:1; transform:none; }
+  </style>
+</head>
+<body>
+
+<!-- ── STICKY NAV ── -->
+<nav>
+  <a href="#top" class="nav-brand">
+    <!-- SVG Logo -->
+    <svg class="nav-logo-svg" viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <!-- Outer circle -->
+      <circle cx="26" cy="26" r="25" fill="url(#logoGrad)" stroke="rgba(196,146,58,0.6)" stroke-width="1"/>
+      <!-- Temple/building silhouette -->
+      <rect x="14" y="30" width="24" height="10" rx="1" fill="rgba(255,255,255,0.95)"/>
+      <rect x="17" y="24" width="18" height="8" rx="1" fill="rgba(255,255,255,0.95)"/>
+      <rect x="21" y="18" width="10" height="8" rx="1" fill="rgba(255,255,255,0.95)"/>
+      <!-- Spire / Shikhar -->
+      <polygon points="26,9 23,18 29,18" fill="#C4923A"/>
+      <!-- Columns -->
+      <rect x="16" y="30" width="2.5" height="10" fill="rgba(14,39,68,0.2)"/>
+      <rect x="20.5" y="30" width="2.5" height="10" fill="rgba(14,39,68,0.2)"/>
+      <rect x="29" y="30" width="2.5" height="10" fill="rgba(14,39,68,0.2)"/>
+      <rect x="33.5" y="30" width="2.5" height="10" fill="rgba(14,39,68,0.2)"/>
+      <!-- Door -->
+      <rect x="23" y="33" width="6" height="7" rx="3" fill="rgba(14,39,68,0.35)"/>
+      <!-- Gold accent line -->
+      <rect x="12" y="40" width="28" height="2" rx="1" fill="#C4923A"/>
+      <defs>
+        <linearGradient id="logoGrad" x1="0" y1="0" x2="52" y2="52" gradientUnits="userSpaceOnUse">
+          <stop offset="0%" stop-color="#0E2744"/>
+          <stop offset="100%" stop-color="#1B3A5C"/>
+        </linearGradient>
+      </defs>
+    </svg>
+    <div class="nav-brand-text">
+      <div class="nav-brand-name">Akshardham Associates</div>
+      <div class="nav-brand-sub">Kota, Rajasthan &nbsp;•&nbsp; Est. 2024</div>
+    </div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#video">Presentation</a></li>
+    <li><a href="#plans">Invest</a></li>
+    <li><a href="#project">Project</a></li>
+    <li><a href="#testimonials">Reviews</a></li>
+    <li><a href="#feedback" class="nav-cta">Leave Feedback</a></li>
+  </ul>
+</nav>
+
+<!-- ── HERO ── -->
+<section class="hero" id="top">
+  <div class="hero-bg"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="hero-eyebrow">
+      <span>🏛</span> Confidential Investor Universe
+    </div>
+    <h1>
+      Build <span class="gold">Generational Wealth</span><br />
+      in Rajasthan Real Estate
+    </h1>
+    <p class="hero-tagline">Aapke time aur energy ke bina — paisa kaam karta rahe.</p>
+    <p class="hero-sub">
+      Akshardham Associates is building a self-running real estate ecosystem
+      where every expert, agent, and system works in your favour — without
+      your daily involvement. Watch the presentation. See the plans. Join the universe.
+    </p>
+    <div class="hero-btns">
+      <a href="#video" class="btn-gold">▶ &nbsp;Watch Full Presentation</a>
+      <a href="#plans" class="btn-ghost">View Investment Plans →</a>
+    </div>
+  </div>
+  <div class="hero-scroll">
+    <div class="scroll-dot"></div>
+    <span>Scroll to explore</span>
+  </div>
+</section>
+
+<!-- ── STATS RIBBON ── -->
+<div class="stats-ribbon">
+  <div class="stats-inner">
+    <div class="stat-item">
+      <div class="stat-icon">🎯</div>
+      <div class="stat-num">10,000+</div>
+      <div class="stat-label">Target Associated Realtors</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-icon">💰</div>
+      <div class="stat-num">₹1 Cr+</div>
+      <div class="stat-label">Income Per Realtor</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-icon">📈</div>
+      <div class="stat-num">50%</div>
+      <div class="stat-label">Fixed Return — Entry Plan</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-icon">⏱️</div>
+      <div class="stat-num">7 Days</div>
+      <div class="stat-label">Feedback & Decision Window</div>
+    </div>
+  </div>
+</div>
+
+<!-- ── ABOUT / GENERATIONAL WEALTH ── -->
+<section class="section" id="about">
+  <div class="about-split fade-up">
+    <div class="about-img-wrap">
+      <img src="https://images.unsplash.com/photo-1560520653-9e0e4c89eb11?w=900&q=80" alt="Real Estate Wealth" />
+      <div class="about-badge">
+        <div class="about-badge-num">3 Steps</div>
+        <div class="about-badge-label">To Generational Wealth</div>
+      </div>
+    </div>
+    <div>
+      <div class="pill">💡 The Akshardham Model</div>
+      <h2 class="section-title">What is Generational Wealth — Really?</h2>
+      <div class="divider"></div>
+      <p class="section-desc">
+        Generational Wealth = money that works <strong>without your time and energy</strong>.
+        It's a system that runs for you, earns for you, and eventually — for your family.
+        Akshardham builds this reality in Rajasthan's real estate sector.
+      </p>
+      <p style="margin-top:12px; font-size:14.5px; color:var(--text-muted); line-height:1.8; font-style:italic;">
+        "Aapka time aur energy lagaye bina — ek aisa system jo aapke liye kaam kare."
+      </p>
+
+      <div class="about-steps">
+        <div class="about-step">
+          <div class="step-num-box">1</div>
+          <div class="step-body">
+            <h4>Build Expertise — Gyan</h4>
+            <p>Go deep into a field you understand. At Akshardham: Real Estate Colonization &amp; Plot Selling — Rajasthan's most proven wealth path.</p>
+            <div class="step-akd-tag">✦ Akshardham provides the expertise — already built for you</div>
+          </div>
+        </div>
+        <div class="about-step">
+          <div class="step-num-box">2</div>
+          <div class="step-body">
+            <h4>Build Systems — Prakriya</h4>
+            <p>Turn expertise into repeatable, scalable processes that run without you. Training modules, playbooks, and operational frameworks — all ready.</p>
+            <div class="step-akd-tag">✦ Complete playbooks &amp; processes already in place</div>
+          </div>
+        </div>
+        <div class="about-step">
+          <div class="step-num-box">3</div>
+          <div class="step-body">
+            <h4>Build a Platform — Manch</h4>
+            <p>A self-running ecosystem where investors, workforce, and company all work in your favour — you see it, you control it, it runs without you.</p>
+            <div class="step-akd-tag">✦ This is exactly what Akshardham builds for YOU</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── MAIN VIDEO ── -->
+<section class="video-section" id="video">
+  <div class="video-inner">
+    <div class="pill">📹 Full Presentation</div>
+    <h2 class="section-title">Watch the Complete Explanation</h2>
+    <div class="divider"></div>
+    <p class="section-desc">Understand the entire Akshardham system — how it's built, who benefits, and how your investment creates a self-running real estate empire in Rajasthan.</p>
+
+    <div class="video-layout fade-up">
+      <div class="main-video-frame">
+        <div class="video-overlay"></div>
+        <div class="video-center" id="mainVideoBtn" onclick="loadMainVideo()">
+          <div class="play-ring">
+            <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+          </div>
+          <div class="video-title">Akshardham Full Explainer</div>
+          <div class="video-sub">Generational Wealth in Real Estate — Hindi / English</div>
+        </div>
+      </div>
+
+      <div class="video-meta">
+        <div class="video-meta-card">
+          <div class="vmc-icon">🏗️</div>
+          <div class="vmc-title">The Complete System</div>
+          <div class="vmc-desc">See how investors, workforce, HQ teams, and land owners work together in a structured, transparent ecosystem.</div>
+        </div>
+        <div class="video-meta-card">
+          <div class="vmc-icon">💎</div>
+          <div class="vmc-title">Your Role as Investor</div>
+          <div class="vmc-desc">From Observer to Founder — understand each layer of the Akshardham Investor Universe and what you gain at each stage.</div>
+        </div>
+        <div class="video-meta-card">
+          <div class="vmc-icon">⚡</div>
+          <div class="vmc-title">7-Day Decision Process</div>
+          <div class="vmc-desc">No pressure, no repeated calls. Watch → Understand → Feedback → Decision. We respect your time.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── KEY HIGHLIGHTS / SHORTS ── -->
+<section class="section-full">
+  <div class="section-inner">
+    <div class="text-center">
+      <div class="pill pill-emerald">📱 Key Highlights</div>
+      <h2 class="section-title mt-16">Important Insights — Short &amp; Sharp</h2>
+      <div class="divider divider-center"></div>
+      <p class="section-desc" style="margin:0 auto;">
+        Sabse mahatvapurn baatein — crisp format mein. The most important insights from the full presentation.
+      </p>
+    </div>
+
+    <div class="shorts-grid mt-52 fade-up">
+      <div class="short-card">
+        <div class="short-thumb">
+          <img src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=600&q=80" alt="Investment Returns" />
+          <div class="short-thumb-overlay"></div>
+          <div class="short-badge">Highlight #1</div>
+          <div class="short-play-btn">
+            <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+          </div>
+        </div>
+        <div class="short-body">
+          <div class="short-tag">📈 Investment Returns</div>
+          <h3 class="short-title">Investment ke 4 Stages — Step-by-Step Returns</h3>
+          <p class="short-desc">₹10L se shuruwat karo — ₹15L → ₹20L → ₹25L → ₹30L+ tak ka poora safar. Har layer mein zyaada milta hai — aur zyaada milta hai.</p>
+        </div>
+      </div>
+
+      <div class="short-card">
+        <div class="short-thumb">
+          <img src="https://images.unsplash.com/photo-1506784983877-45594efa4cbe?w=600&q=80" alt="7 Day Process" />
+          <div class="short-thumb-overlay"></div>
+          <div class="short-badge">Highlight #2</div>
+          <div class="short-play-btn">
+            <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+          </div>
+        </div>
+        <div class="short-body">
+          <div class="short-tag">⏰ Decision Process</div>
+          <h3 class="short-title">7 Din Mein Complete Karo — Ye Process Hai</h3>
+          <p class="short-desc">Investment easy nahi hoti — par hum aapko clarity dete hain bina pressure ke. Yeh matter 7 dinon mein poora karo. Iske baad hum aapse sampark karenge.</p>
+        </div>
+      </div>
+
+      <div class="short-card">
+        <div class="short-thumb">
+          <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?w=600&q=80" alt="Team & System" />
+          <div class="short-thumb-overlay"></div>
+          <div class="short-badge">Highlight #3</div>
+          <div class="short-play-btn">
+            <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+          </div>
+        </div>
+        <div class="short-body">
+          <div class="short-tag">👥 Business & Team</div>
+          <h3 class="short-title">Aapka Business, Aapki Team, Aapke Agents</h3>
+          <p class="short-desc">Ek complete business aapke naam se ban jaata hai — dedicated team, expert agents, aur ek self-running system. Sab kuch aapke liye, bina aapki rozmarra ki involvement ke.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── INVESTMENT PLANS ── -->
+<section class="plans-bg" id="plans">
+  <div class="plans-inner">
+    <div class="text-center">
+      <div class="pill">💰 Investor Universe</div>
+      <h2 class="section-title mt-16">4 Investment Layers — Choose Your Path</h2>
+      <div class="divider divider-center"></div>
+      <p class="section-desc" style="margin:0 auto; max-width:620px;">
+        Har layer mein aap sirf investor nahi — ek co-builder bante ho.
+        Return ke saath identity, status, aur legacy milti hai.
+        Every plan is legally documented. Returns are fixed. Transparency is non-negotiable.
+      </p>
+    </div>
+
+    <div class="plans-grid mt-52 fade-up">
+      <!-- Plan 1 -->
+      <div class="plan-card">
+        <div class="plan-layer">Layer 01</div>
+        <div class="plan-name">Secure Entry Plan</div>
+        <div class="plan-return-box">
+          <div class="plan-inv">Invest: ₹10 Lakhs</div>
+          <div class="plan-ret">₹15 Lakhs</div>
+          <div class="plan-dur">24 Months · 50% Fixed Return</div>
+        </div>
+        <ul class="plan-feat">
+          <li><span class="ck">✓</span>Online Investor Education (ALIP)</li>
+          <li><span class="ck">✓</span>Monthly Land Language Masterclass</li>
+          <li><span class="ck">✓</span>Past project case studies</li>
+          <li><span class="ck">✓</span>Live Q&amp;A with Akshardham team</li>
+          <li><span class="ck">✓</span>Safe, documented plot agreement</li>
+        </ul>
+      </div>
+
+      <!-- Plan 2 — FEATURED -->
+      <div class="plan-card p2 featured">
+        <div class="plan-hot">Most Popular</div>
+        <div class="plan-layer">Layer 02</div>
+        <div class="plan-name">Pro Partner Circle</div>
+        <div class="plan-return-box">
+          <div class="plan-inv">Invest: ₹10 Lakhs</div>
+          <div class="plan-ret">₹20 Lakhs</div>
+          <div class="plan-dur">Ongoing · 2× Return</div>
+        </div>
+        <ul class="plan-feat">
+          <li><span class="ck">✓</span>Named stakeholder in specific project</li>
+          <li><span class="ck">✓</span>Monthly drone site footage</li>
+          <li><span class="ck">✓</span>WhatsApp insider project updates</li>
+          <li><span class="ck">✓</span>Public contribution recognition</li>
+          <li><span class="ck">✓</span>Weekly project progress meetings</li>
+          <li><span class="ck">✓</span>Graduate as Project Builder</li>
+        </ul>
+      </div>
+
+      <!-- Plan 3 -->
+      <div class="plan-card p3">
+        <div class="plan-layer">Layer 03</div>
+        <div class="plan-name">District Ambassador</div>
+        <div class="plan-return-box">
+          <div class="plan-inv">Invest: ₹10 Lakhs</div>
+          <div class="plan-ret" style="color:var(--teal)">₹25 Lakhs+</div>
+          <div class="plan-dur">Ongoing · + Incentives</div>
+        </div>
+        <ul class="plan-feat">
+          <li><span class="ck" style="background:rgba(10,126,140,.1);color:var(--teal)">✓</span>Official District Growth Ambassador title</li>
+          <li><span class="ck" style="background:rgba(10,126,140,.1);color:var(--teal)">✓</span>Your local knowledge = company asset</li>
+          <li><span class="ck" style="background:rgba(10,126,140,.1);color:var(--teal)">✓</span>Priority access to new project zones</li>
+          <li><span class="ck" style="background:rgba(10,126,140,.1);color:var(--teal)">✓</span>Public recognition of contributions</li>
+          <li><span class="ck" style="background:rgba(10,126,140,.1);color:var(--teal)">✓</span>Leverage government connections</li>
+        </ul>
+      </div>
+
+      <!-- Plan 4 -->
+      <div class="plan-card p4">
+        <div class="plan-invite">Invite Only</div>
+        <div class="plan-layer" style="color:var(--gold)">Layer 04</div>
+        <div class="plan-name">Founding Circle</div>
+        <div class="plan-return-box">
+          <div class="plan-inv">By Invitation Only</div>
+          <div class="plan-ret">₹30 Lakhs+</div>
+          <div class="plan-dur">Lifetime · Generational Legacy</div>
+        </div>
+        <ul class="plan-feat">
+          <li><span class="ck" style="background:rgba(196,146,58,.12);color:var(--gold)">✓</span>Naming rights on land parcels</li>
+          <li><span class="ck" style="background:rgba(196,146,58,.12);color:var(--gold)">✓</span>Annual Founders Conclave</li>
+          <li><span class="ck" style="background:rgba(196,146,58,.12);color:var(--gold)">✓</span>Children's wealth workshop</li>
+          <li><span class="ck" style="background:rgba(196,146,58,.12);color:var(--gold)">✓</span>Closed inner circle access</li>
+          <li><span class="ck" style="background:rgba(196,146,58,.12);color:var(--gold)">✓</span>Project lead in territory</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="guarantee-banner mt-32 fade-up">
+      <div class="guarantee-icon">🛡️</div>
+      <div class="guarantee-text">
+        <h4>Legally Documented · Fully Transparent · Fixed Returns</h4>
+        <p>Sabhi plans legally documented hain. Returns fixed hain. Transparency non-negotiable hai. Akshardham mein aapka paisa safe, structured, aur working hai.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── WHAT YOU GET (IMAGE + CONTENT SPLIT) ── -->
+<div class="feature-img-row" id="benefits">
+  <div class="fir-img">
+    <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=900&q=80" alt="Team Working" />
+    <div class="fir-img-overlay"></div>
+  </div>
+  <div class="fir-content">
+    <div class="pill">🎁 What You Gain</div>
+    <h2>Sirf Return Nahi — A Complete Universe</h2>
+    <div class="divider"></div>
+    <p>Akshardham mein aap sirf paisa nahi lagate — you become part of an ecosystem that keeps growing. More than money, you get a system, a team, and a legacy.</p>
+    <div class="benefits-list mt-32">
+      <div class="benefit-row fade-up">
+        <div class="ben-icon gold-bg">🏢</div>
+        <div><div class="ben-title">Your Own Business</div><div class="ben-desc">A complete real estate system in your name — running without your daily input.</div></div>
+      </div>
+      <div class="benefit-row fade-up">
+        <div class="ben-icon emerald-bg">👥</div>
+        <div><div class="ben-title">Dedicated Expert Team</div><div class="ben-desc">Field agents, HQ, legal, marketing — all organised and working for your investment.</div></div>
+      </div>
+      <div class="benefit-row fade-up">
+        <div class="ben-icon teal-bg">📚</div>
+        <div><div class="ben-title">Lifetime Education (ALIP)</div><div class="ben-desc">Learn the language of land. Masterclasses, case studies, live Q&amp;A sessions — ongoing.</div></div>
+      </div>
+      <div class="benefit-row fade-up">
+        <div class="ben-icon coral-bg">🌍</div>
+        <div><div class="ben-title">Employment &amp; Impact</div><div class="ben-desc">Create jobs in Rajasthan — an intangible benefit that builds your community legacy.</div></div>
+      </div>
+      <div class="benefit-row fade-up">
+        <div class="ben-icon navy-bg">👑</div>
+        <div><div class="ben-title">Generational Legacy</div><div class="ben-desc">"Mera baap us township ka founding investor tha." — That's not a return. That's an inheritance.</div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ── 7-DAY PROCESS ── -->
+<section class="section text-center">
+  <div class="pill pill-teal">⏳ Our Process</div>
+  <h2 class="section-title mt-16">7-Day Decision Window — No Pressure, Full Clarity</h2>
+  <div class="divider divider-center"></div>
+  <p class="section-desc" style="margin:0 auto;">
+    Investment aasaan nahi hoti — lekin hamara structured 7-din process aapko sab kuch clearly samajhne ka time deta hai, bina kisi pressure ke.
+  </p>
+
+  <div class="process-row fade-up">
+    <div class="proc-step">
+      <div class="proc-bubble done">▶</div>
+      <div class="proc-label">Watch Presentation</div>
+      <div class="proc-label-hi">Presentation dekhen</div>
+      <div class="proc-sub">Video + slides se poora model samjhein</div>
+    </div>
+    <div class="proc-step">
+      <div class="proc-bubble">2</div>
+      <div class="proc-label">Ask Questions</div>
+      <div class="proc-label-hi">Sawaal poochhen</div>
+      <div class="proc-sub">Koi bhi doubt — seedha Akshardham team se</div>
+    </div>
+    <div class="proc-step">
+      <div class="proc-bubble">3</div>
+      <div class="proc-label">Leave Feedback</div>
+      <div class="proc-label-hi">Feedback den</div>
+      <div class="proc-sub">Neeche form mein apna response daalein</div>
+    </div>
+    <div class="proc-step">
+      <div class="proc-bubble">7</div>
+      <div class="proc-label">Share Decision</div>
+      <div class="proc-label-hi">7 din mein decision</div>
+      <div class="proc-sub">Hum aapke saath hain — whichever path you choose</div>
+    </div>
+  </div>
+
+  <div style="margin-top:48px; background:linear-gradient(135deg,#FFF7ED 0%,#FEF3C7 100%); border-radius:18px; padding:24px 36px; display:inline-block; border-left:5px solid var(--gold); text-align:left; max-width:700px;">
+    <p style="font-size:15px; color:#7A5A1A; font-weight:500; line-height:1.7;">
+      ⏰ &nbsp;<em>"Repeated follow-ups cost us both time. We simply ask — share your decision within <strong>7 days</strong> and leave your feedback below. Investment is never easy at the moment it is made — but it is always rewarding when it gives."</em>
+    </p>
+  </div>
+</section>
+
+<!-- ── PROJECT SPOTLIGHT ── -->
+<section class="section" id="project">
+  <div class="pill pill-emerald">🏗️ Current Project</div>
+  <h2 class="section-title mt-16">Vinayak Residency — Jhalawar, Rajasthan</h2>
+  <div class="divider"></div>
+  <p class="section-desc">Our flagship ongoing project — premium registered plots in a prime, developed city area.</p>
+
+  <div class="project-card mt-52 fade-up">
+    <img class="project-img" src="https://images.unsplash.com/photo-1448630360428-65456885c650?w=1400&q=80" alt="Vinayak Residency Project" />
+    <div class="project-overlay"></div>
+    <div class="project-content">
+      <div>
+        <div class="project-badge-row">
+          <span class="project-badge">✅ Registry Done</span>
+          <span class="project-badge green">📍 Jhalawar City</span>
+          <span class="project-badge" style="background:var(--teal)">🛣️ 40ft Roads</span>
+          <span class="project-badge" style="background:rgba(255,255,255,.25)">General Plot</span>
+        </div>
+        <div class="project-name">Vinayak Residency</div>
+        <div class="project-loc">📍 Near Brij Nagar Colony · Fruit &amp; Vegetable Mandi · Jhalawar, Rajasthan</div>
+      </div>
+      <div class="project-stats">
+        <div class="ps-item">
+          <div class="ps-num">40ft</div>
+          <div class="ps-label">Internal Roads</div>
+        </div>
+        <div class="ps-item">
+          <div class="ps-num">CC</div>
+          <div class="ps-label">Road Connectivity</div>
+        </div>
+        <div class="ps-item">
+          <div class="ps-num">✔</div>
+          <div class="ps-label">Near Bus Stand</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── TESTIMONIALS ── -->
+<section class="testi-section" id="testimonials">
+  <div class="testi-inner">
+    <div class="pill">💬 Investor Reviews</div>
+    <h2 class="section-title mt-16">What People Are Saying</h2>
+    <div class="divider"></div>
+    <p class="section-desc">Real words from real people who have seen and experienced the Akshardham system.</p>
+
+    <div class="testi-grid fade-up">
+      <div class="testi-card">
+        <div class="testi-stars">
+          <div class="star">★</div><div class="star">★</div><div class="star">★</div>
+          <div class="star">★</div><div class="star">★</div>
+        </div>
+        <div class="testi-quote">"</div>
+        <p class="testi-text">
+          Mujhe yeh yojana bahut achchi lagi aur main is mein kaam karne ke liye aapke saath bilkul aa raha hoon.
+          Pehle bhi humne aapke saath varshon pehle kaam kiya tha — aur tab bhi barhiya hota tha.
+          Lekin ab jab system ban gaya hai, yeh aur zyaada achcha hai.
+          The system makes everything more structured, more transparent, and far more rewarding.
+        </p>
+        <div class="testi-author">
+          <div class="testi-avatar">S</div>
+          <div>
+            <div class="testi-name">Shyam Sen</div>
+            <div class="testi-role">Retired Teacher · Rajasthan</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="testi-placeholder">
+        <div class="placeholder-icon">✍️</div>
+        <p>Your review could appear here</p>
+        <small>Share your feedback using the form below — and be part of the Akshardham story.</small>
+        <a href="#feedback" class="btn-gold" style="margin-top:22px; font-size:13px; padding:12px 28px;">Leave Your Feedback →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── FEEDBACK FORM ── -->
+<section class="feedback-section" id="feedback">
+  <div class="feedback-inner">
+    <div class="feedback-card fade-up">
+      <div class="pill">📝 Investor Feedback</div>
+      <h2 class="section-title">Share Your Thoughts</h2>
+      <div class="divider divider-center"></div>
+      <p class="section-desc">
+        Any question, suggestion, or just want to tell us where you are in your decision — leave it here.
+        We will respond within 7 days. <em>Aapka feedback humare liye bahut mahatvapurn hai.</em>
+      </p>
+
+      <form id="feedbackForm" onsubmit="handleSubmit(event)">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="fname">Your Name (Aapka Naam) *</label>
+            <input type="text" id="fname" placeholder="e.g. Ramesh Sharma" required />
+          </div>
+          <div class="form-group">
+            <label for="fmobile">Mobile Number *</label>
+            <input type="tel" id="fmobile" placeholder="10-digit number" maxlength="10" required />
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="fcity">Your City (Sheher)</label>
+          <input type="text" id="fcity" placeholder="e.g. Kota, Jhalawar, Baran..." />
+        </div>
+        <div class="form-group">
+          <label for="fstage">Where Are You in Your Decision?</label>
+          <select id="fstage">
+            <option value="">— Select Your Stage —</option>
+            <option>Presentation dekhi, soch raha hoon / Still evaluating</option>
+            <option>Ready hoon — aur details chahiye / Want more details</option>
+            <option>Invest karna chahta hoon / Ready to invest</option>
+            <option>Pehle ALIP training lena chahta hoon / Want to join ALIP first</option>
+            <option>Funds baad mein aayenge / Funds arriving soon</option>
+            <option>Abhi nahi — future mein / Not now, but future interest</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="ffeedback">Your Feedback / Questions *</label>
+          <textarea id="ffeedback" placeholder="Share any thoughts about the presentation, the plans, or any questions you have..." required></textarea>
+        </div>
+        <button type="submit" class="form-submit">Submit My Feedback →</button>
+        <p class="form-privacy">🔒 Your information is shared only with Akshardham Associates. No spam, ever.</p>
+      </form>
+
+      <div id="formSuccess">
+        <div class="success-check">✅</div>
+        <div class="success-title">Shukriya! Thank You!</div>
+        <p class="success-desc">
+          Your feedback has been received. We will reach out within <strong>7 days</strong>.<br />
+          <em style="font-size:14px; color:var(--text-muted); display:block; margin-top:10px;">— Akshardham Associates Team, Kota, Rajasthan</em>
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── FOOTER ── -->
+<footer>
+  <div class="foot-inner">
+    <div class="foot-top">
+      <div>
+        <div class="foot-logo">Akshardham Associates</div>
+        <p class="foot-tagline">Creating Not Just Investors, But Builders of Rajasthan's Real Estate Future. Knowledge · Peace · Prosperity.</p>
+        <div class="foot-socials">
+          <a class="foot-social" href="#">🌐</a>
+          <a class="foot-social" href="#">📞</a>
+          <a class="foot-social" href="#">✉️</a>
+          <a class="foot-social" href="#">💬</a>
+        </div>
+      </div>
+
+      <div>
+        <div class="foot-heading">Quick Links</div>
+        <ul class="foot-links">
+          <li><a href="#about">About the Model</a></li>
+          <li><a href="#video">Full Presentation</a></li>
+          <li><a href="#plans">Investment Plans</a></li>
+          <li><a href="#project">Current Project</a></li>
+          <li><a href="#testimonials">Reviews</a></li>
+          <li><a href="#feedback">Leave Feedback</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <div class="foot-heading">Investment Layers</div>
+        <ul class="foot-links">
+          <li><a href="#plans">Layer 01 — Secure Entry (₹15L)</a></li>
+          <li><a href="#plans">Layer 02 — Pro Partner (₹20L)</a></li>
+          <li><a href="#plans">Layer 03 — District Ambassador (₹25L+)</a></li>
+          <li><a href="#plans">Layer 04 — Founding Circle (₹30L+)</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <div class="foot-heading">Contact Us</div>
+        <div class="foot-phones">
+          <div>
+            <div class="foot-phone">9166064096</div>
+            <div class="foot-phone-label">Primary Contact</div>
+          </div>
+          <div style="margin-top:8px;">
+            <div class="foot-phone">8209085359</div>
+            <div class="foot-phone-label">Secondary Contact</div>
+          </div>
+        </div>
+        <div class="foot-contact-item" style="margin-top:18px;">
+          <span class="fc-icon">🌐</span>
+          <span>www.akshardhamassociates.com</span>
+        </div>
+        <div class="foot-contact-item">
+          <span class="fc-icon">✉️</span>
+          <span>info@akshardhamassociates.com</span>
+        </div>
+        <div class="foot-contact-item">
+          <span class="fc-icon">📍</span>
+          <span>Near Pareek Hospital, Khanpur &amp; Near Milan Hair Dresser, Mangal Pura, Jhalawar</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="foot-bottom">
+      <div class="foot-copy">© 2025–2026 Akshardham Associates, Kota, Rajasthan. All rights reserved.</div>
+      <div class="foot-conf">Confidential — Investors Only</div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // ── FADE UP ON SCROLL ──
+  const fadeEls = document.querySelectorAll('.fade-up');
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); } });
+  }, { threshold: 0.08 });
+  fadeEls.forEach(el => io.observe(el));
+
+  // ── NAV SCROLL EFFECT ──
+  const nav = document.querySelector('nav');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 60) {
+      nav.style.background = 'rgba(7,15,28,.96)';
+    } else {
+      nav.style.background = 'rgba(10,20,40,.88)';
+    }
+  });
+
+  // ── SMOOTH SCROLL ──
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+      e.preventDefault();
+      const t = document.querySelector(a.getAttribute('href'));
+      if (t) t.scrollIntoView({ behavior:'smooth', block:'start' });
+    });
+  });
+
+  // ── VIDEO LOADER ──
+  function loadMainVideo() {
+    const btn = document.getElementById('mainVideoBtn');
+    btn.innerHTML = `
+      <div style="text-align:center; padding:40px 30px;">
+        <div style="font-size:52px; margin-bottom:18px;">🎬</div>
+        <div style="font-family:'Playfair Display',serif; font-size:22px; color:#fff; margin-bottom:10px;">Video Embed Area</div>
+        <div style="font-size:14px; color:rgba(255,255,255,.5); line-height:1.7; max-width:380px;">
+          Apna YouTube ya Vimeo video link yahan add karo.<br/>
+          <code style="background:rgba(255,255,255,.1); padding:6px 12px; border-radius:6px; font-size:12px; display:inline-block; margin-top:10px; color:rgba(255,255,255,.7)">iframe src="your-video-url"</code>
+        </div>
+      </div>`;
+  }
+
+  // ── FORM HANDLER ──
+  function handleSubmit(e) {
+    e.preventDefault();
+    const mobile = document.getElementById('fmobile').value.trim();
+    if (mobile.length !== 10 || isNaN(Number(mobile))) {
+      alert('Please enter a valid 10-digit mobile number.');
+      return;
+    }
+    document.getElementById('feedbackForm').style.display = 'none';
+    document.getElementById('formSuccess').style.display = 'block';
+  }
+</script>
+</body>
+</html>
 
